@@ -24,7 +24,10 @@ public class ArrayInterviewQuestions {
 	        
 	        	
 			//3. How to check if array contains a number in Java? 
-	         public static void sortByBubble(int[] array) {
+	       
+	        			
+			//4. How to find largest and smallest number in unsorted array?
+			  public static void findLargestAndSmallest(int[] array) {
 	        	 int smallest = 0;
 	        	 int largest = 0;
 	        	 for (int i = 0; i < array.length; i++) {
@@ -41,8 +44,7 @@ public class ArrayInterviewQuestions {
 	        	 }
 	        	 System.out.println("largest is: " + largest +  "  Smallest is: " + smallest);
 	         }
-	        			 /*
-			4. How to find largest and smallest number in unsorted array?
+			 /*
 			5. How to find all pairs on integer array whose sum is equal to given number? 
 			6. How to find repeated numbers in an array if it contains multiple duplicates?
 			7. Write a program to remove duplicates from array in Java? 
