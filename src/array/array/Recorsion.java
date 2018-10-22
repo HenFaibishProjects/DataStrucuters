@@ -2,6 +2,9 @@ package array.array;
 
 public class Recorsion {
 
+	public static int i = 0;
+	public static int howManyZero = 0;
+	
 	// 1! = 0! *1 =1
 	// 2! = 2 * 1 =2 * 1!
 	// 3! = 3 * 2 * 1 = 3 * 2!
@@ -28,6 +31,22 @@ public class Recorsion {
 	}
 	
 	
-	
-	
+	public static int interivelFindHowManyZeroOnArray(int[] array) {
+		int howManyZero = 0;
+		for(int i= 0 ; i<array.length-1 ; i++) {
+			if (array[i] == 0)
+				howManyZero++;
+		}
+		return howManyZero;
+	}
+
+	public static int RecurssiveFindHowManyZeroOnArray(int[] array) {
+		if(i>array.length-1)
+			return howManyZero;
+			if (array[i] == 0) 
+				howManyZero++;
+			    i++;
+			RecurssiveFindHowManyZeroOnArray(array);
+			return howManyZero;
+	}
 }

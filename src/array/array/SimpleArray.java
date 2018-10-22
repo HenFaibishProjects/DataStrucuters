@@ -3,17 +3,30 @@ package array.array;
 public class SimpleArray {
 
 	public int[] intArray = new int[7];
+	public int[] intOngoingArray = new int[7];
 	
 	
 	public void setArray() {
 		intArray[0] =20;
 		intArray[1] =10;
-		intArray[2] =9;
+		intArray[2] =0;
 		intArray[3] =7;
 		intArray[4] =12;
 		intArray[5] =17;
 		intArray[6] =44;
+		
+		
+		intOngoingArray[0] =6;
+		intOngoingArray[1] =7;
+		intOngoingArray[2] =8;
+		intOngoingArray[3] =10;
+		intOngoingArray[4] =11;
+		intOngoingArray[5] =12;
+		intOngoingArray[6] =13;
+		
+		
 	}
+	
 	
 	
 	// Print array
@@ -48,7 +61,7 @@ public class SimpleArray {
 	
     public void overAllArray() {
     	setArray();
-    	findIndexOfSpecificValue(intArray, 7);
+    	//findIndexOfSpecificValue(intArray, 7);
     	//printArray(intArray);
     	
     }

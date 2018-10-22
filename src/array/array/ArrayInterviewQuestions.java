@@ -2,10 +2,46 @@ package array.array;
 
 public class ArrayInterviewQuestions {
 	
-	       /* 
-	        1. How to find the missing number in integer array of 1 to 100? 
-	        2. How to find duplicate number on Integer array in Java?
-			3. How to check if array contains a number in Java? 
+	public static BubbleSort bubbleSort = new BubbleSort();       
+	
+	        // 1. How to find the missing number in integer array of 1 to 100? 
+	         public static int findMissingNumber(int [] array) {
+	        	 for(int i=0 ; i<array.length ; i++) {
+	        		 if (!(array[i]+1 == (array[i+1]))) {
+	        			 System.out.println(array[i]);
+	        			 return array[i];
+	        		 }
+	        	 }
+	        	 System.out.println(-1);
+				return -1;
+	         }
+
+	        
+	         
+	        // 2. How to find duplicate number on Integer array in Java?
+	                
+	        
+	        
+	        	
+			//3. How to check if array contains a number in Java? 
+	         public static void sortByBubble(int[] array) {
+	        	 int smallest = 0;
+	        	 int largest = 0;
+	        	 for (int i = 0; i < array.length; i++) {
+	        		 for (int j=i+1; j<array.length; j++) {
+	        			 if (array[j]<array[i]) {
+	        				 smallest = array[j];
+	        			 }
+	        			 if (array[j]>array[i]) {
+	        				 largest = array[j];
+	        			 }
+	        			 
+	        		 }
+	        		 
+	        	 }
+	        	 System.out.println("largest is: " + largest +  "  Smallest is: " + smallest);
+	         }
+	        			 /*
 			4. How to find largest and smallest number in unsorted array?
 			5. How to find all pairs on integer array whose sum is equal to given number? 
 			6. How to find repeated numbers in an array if it contains multiple duplicates?
