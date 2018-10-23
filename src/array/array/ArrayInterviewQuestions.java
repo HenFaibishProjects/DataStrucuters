@@ -1,25 +1,35 @@
 package array.array;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class ArrayInterviewQuestions {
 	
 	public static BubbleSort bubbleSort = new BubbleSort();       
 	
 	        // 1. How to find the missing number in integer array of 1 to 100? 
-	         public static int findMissingNumber(int [] array) {
+	         public static Integer findMissingNumber(int [] array) {
 	        	 for(int i=0 ; i<array.length ; i++) {
 	        		 if (!(array[i]+1 == (array[i+1]))) {
-	        			 System.out.println(array[i]);
 	        			 return array[i];
 	        		 }
 	        	 }
-	        	 System.out.println(-1);
-				return -1;
+				return null;
 	         }
 
 	        
 	         
 	        // 2. How to find duplicate number on Integer array in Java?
-	                
+	         public static Integer findDuplicateNumber(int[] array) {
+	        	 for (int i = 0; i < array.length; i++) {
+	        		 for (int j=i+1; j<array.length; j++) {
+	        			 if (array[j]==array[i]) 
+	        				 return  array[i];
+	        		 }
+	        	 }
+	        	 return null;
+	         }
 	        
 	        
 	        	
@@ -38,16 +48,42 @@ public class ArrayInterviewQuestions {
 	        			 if (array[j]>array[i]) {
 	        				 largest = array[j];
 	        			 }
-	        			 
 	        		 }
-	        		 
 	        	 }
 	        	 System.out.println("largest is: " + largest +  "  Smallest is: " + smallest);
 	         }
-			 /*
-			5. How to find all pairs on integer array whose sum is equal to given number? 
-			6. How to find repeated numbers in an array if it contains multiple duplicates?
-			7. Write a program to remove duplicates from array in Java? 
+			 
+//			5. How to find all pairs on integer array whose sum is equal to given number? 
+			
+			
+			
+			
+//			6. How to find repeated numbers in an array if it contains multiple duplicates?
+			
+			
+			
+			
+//			7. Write a program to remove duplicates from array in Java? 
+			  
+			 public static void removeDuplicateNumber(int[] array) {
+				 for (int i = 0; i < array.length; i++) {
+	        		 for (int j=i+1; j<array.length; j++) {
+	        			 if (array[j]==array[i])
+	        				 while (j<array.length-1) {
+	     						array[j] = array[j+1];
+	     						j++;}
+	        		 }
+				 }
+				array =Arrays.copyOf(array, array.length-1);
+				SimpleArray.printArray(array);
+			 }
+	        		 
+
+					 
+					
+					 
+	        					 
+	        					 /*
 			8. How to sort an array in place using QuickSort algorithm? 
 			9. Write a program to find intersection of two sorted arrays in Java?
 			10.There is an array with every element repeated twice except one. Find that element? 

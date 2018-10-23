@@ -7,13 +7,14 @@ public class SimpleArray {
 	
 	
 	public void setArray() {
-		intArray[0] =20;
-		intArray[1] =10;
-		intArray[2] =0;
-		intArray[3] =7;
-		intArray[4] =12;
-		intArray[5] =17;
-		intArray[6] =44;
+		intArray[0] =3;
+		intArray[1] =1;
+		intArray[2] =2;
+		intArray[3] =3;
+		intArray[4] =7;
+		intArray[5] =9;
+		intArray[6] =1;
+		intArray[6] =8;
 		
 		
 		intOngoingArray[0] =6;
@@ -30,7 +31,7 @@ public class SimpleArray {
 	
 	
 	// Print array
-	public void printArray(int[] anyArray) {
+	public static void printArray(int[] anyArray) {
 		for (int i=0 ; i< anyArray.length ; i++) {
 			System.out.println(anyArray[i]);
 		}		

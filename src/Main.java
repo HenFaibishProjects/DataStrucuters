@@ -18,8 +18,10 @@ public class Main {
 //          bubbleSort.sortByBubble(simplearray.intArray);
 //          simplearray.printArray(simplearray.intArray);
 //        	System.out.println(Recorsion.interivelFindHowManyZeroOnArray(simplearray.intArray));
-          ArrayInterviewQuestions.findMissingNumber(simplearray.intOngoingArray);       	
-          ArrayInterviewQuestions.sortByBubble(simplearray.intArray);
+//          ArrayInterviewQuestions.findMissingNumber(simplearray.intOngoingArray);       	
+//          ArrayInterviewQuestions.findLargestAndSmallest(simplearray.intArray);
+            ArrayInterviewQuestions.removeDuplicateNumber(simplearray.intArray);
+      
         }
 	
 	
