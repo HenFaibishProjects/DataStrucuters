@@ -2,30 +2,27 @@ package array.array;
 
 public class SimpleArray {
 
-	public int[] intArray = new int[7];
+	public int[] intArray = new int[10];
 	public int[] intOngoingArray = new int[7];
 	
 	
 	public void setArray() {
-		intArray[0] =3;
-		intArray[1] =1;
-		intArray[2] =2;
-		intArray[3] =3;
-		intArray[4] =7;
-		intArray[5] =9;
-		intArray[6] =1;
-		intArray[6] =8;
+		intArray[0] =-5;
+		intArray[1] =-6;
+		intArray[2] =-7;
+		intArray[3] =8;
+		intArray[4] =9;
+		intArray[5] =10;
+		intArray[6] =0;
+		intArray[7] =-44;
+		intArray[8] =1;
+		intArray[9] =-215;
+		
+
 		
 		
-		intOngoingArray[0] =6;
-		intOngoingArray[1] =7;
-		intOngoingArray[2] =8;
-		intOngoingArray[3] =10;
-		intOngoingArray[4] =11;
-		intOngoingArray[5] =12;
-		intOngoingArray[6] =13;
 		
-		
+	
 	}
 	
 	
