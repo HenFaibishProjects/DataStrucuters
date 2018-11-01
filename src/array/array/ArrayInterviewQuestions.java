@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -12,12 +11,11 @@ public class ArrayInterviewQuestions {
 
 	public static BubbleSort bubbleSort = new BubbleSort();       
 
-	// 1. How to find the missing number in integer array of 1 to 100? 
+	//How to find the missing number in integer array of 1 to 100? 
 	public static Integer findMissingNumber(int [] array) {
 		for(int i=0 ; i<array.length ; i++) {
 			if (!(array[i]+1 == (array[i+1]))) {
 				return new Integer(array[i]);
-
 			}
 		}
 		return null;
@@ -25,7 +23,7 @@ public class ArrayInterviewQuestions {
 
 
 
-	// 2. How to find duplicate number on Integer array in Java?
+	//  How to find duplicate number on Integer array in Java?
 	public static Integer findDuplicateNumber(int[] array) {
 		for (int i = 0; i < array.length; i++) {
 			for (int j=i+1; j<array.length; j++) {
@@ -38,8 +36,21 @@ public class ArrayInterviewQuestions {
 
 
 
-	//3. How to check if array contains a number in Java? 
-
+	// How to check if array contains a number in Java? 
+	public static boolean findIfArrayContainsNumber(String[] array) {
+		boolean containNumbers = false;
+		for (int i = 0; i < array.length; i++) {
+			int j =0;
+			while (j<10) { 
+				String str = Integer.toString(j);
+				if (array[i].contains(str)) {
+					containNumbers =true;
+					break; }
+				j++;
+			}
+		}
+		return containNumbers;
+	}
 
 	//4. How to find largest and smallest number in unsorted array?
 	public static void findLargestAndSmallest(int[] array) {
@@ -65,17 +76,16 @@ public class ArrayInterviewQuestions {
 				if ((array[j]+array[i])==sum ) {
 					System.out.println(array[j]+ " " +array[i]);}
 			}
-		  }
 		}
+	}
 
 
 
-	//			6. How to find repeated numbers in an array if it contains multiple duplicates?
 
 
 
 
-	//			7. Write a program to remove duplicates from array in Java? 
+	//	Write a program to remove duplicates from array in Java? 
 
 	public static void removeDuplicateNumber(int[] array) {
 		for (int i = 0; i < array.length; i++) {
@@ -91,7 +101,7 @@ public class ArrayInterviewQuestions {
 	}
 
 
-	// 10.There is an array with every element repeated twice except one. Find that element? 
+	// There is an array with every element repeated twice except one. Find that element? 
 	public static void everyElementRepeatedTwiceExceptOne(int[] array) {
 		List<Integer> tmpList = new ArrayList<Integer>();
 		for (int i = 0; i < array.length; i++) {
@@ -111,7 +121,7 @@ public class ArrayInterviewQuestions {
 	}
 
 
-	// 11. How to find smallest element in unsorted array? 		 
+	//  How to find smallest element in unsorted array? 		 
 	public static int findSmallestElementInUnsorted(int[] array) {
 		int smalles = array[0];
 		for (int i = 1; i < array.length; i++) {
@@ -122,20 +132,10 @@ public class ArrayInterviewQuestions {
 	}
 
 
-	public static void printMap(Map mp) {
-		Iterator it = mp.entrySet().iterator();
-		while (it.hasNext()) {
-			Map.Entry pair = (Map.Entry)it.next();
-			System.out.println(pair.getKey() + " = " + pair.getValue());
-			it.remove(); // avoids a ConcurrentModificationException
-		}
-	}
-
-	// 13 How to find most common element in array? - NOT WORKING WELL !!!!!
+	// How to find most common element in array? - NOT WORKING WELL !!!!!
 
 	public static void findMostCommonElement(int[] array) {
 		Map<Integer, Integer> myMap = new HashMap<Integer, Integer>();
-		Map.Entry<Integer, Integer> maxEntry = null;
 		for(int i : array) {
 			Integer count = myMap.get(i);
 			myMap.put(i, count != null ? count+1 : 0);
@@ -156,7 +156,7 @@ public class ArrayInterviewQuestions {
 	}
 
 
-	// 14. How find the first repeating element in an array of integers? 
+	// How find the first repeating element in an array of integers? 
 	public static int findTheFirstRepeatingElement(int[] array) {
 		int tmp = 0;
 		for (int i = 0; i < array.length; i++) {
@@ -171,7 +171,7 @@ public class ArrayInterviewQuestions {
 	}
 
 
-	// 28. How to reverse array in place in Java? 
+	// How to reverse array in place in Java? 
 	public static void reverseArray(int[] array) {
 		int tmpa ;
 		for (int i = 0; i < array.length/2; i++) {
@@ -181,8 +181,8 @@ public class ArrayInterviewQuestions {
 		}
 		System.out.println(array[1]);
 	}
-	
-	//	15. How to find first non-repeating element in array of integers?
+
+	//	How to find first non-repeating element in array of integers?
 	public static int findTheFirstNoneRepeatingElement(int[] array) {
 		boolean flagForRepeatingElements = false;
 		Integer tmp = null ;
@@ -203,7 +203,7 @@ public class ArrayInterviewQuestions {
 	}
 
 
-	
+
 	//How to find top two numbers from an integer array
 	public static void findTopTwoNumbers(int[] array) {
 		Integer firstTopMaxNumber = null ;
@@ -227,62 +227,96 @@ public class ArrayInterviewQuestions {
 		System.out.println(SecondTopMaxNumber);
 	}
 
-	
-//	17. How to find the smallest positive integer value
+
+	//	How to find the smallest positive integer value
 	public static void findTheSmallestPsitiveInt(int[] array) {
 		Integer tmp = null;
 		for (int i = 1; i < array.length; i++) {
 			if (array[i]>0) {
 				tmp = array[i];
 				break; }
-				} 
-				for (int j=0 ; j <array.length; j++) {
-					if (array[j]>0 && array[j]<tmp)
-						tmp = array[j];
+		} 
+		for (int j=0 ; j <array.length; j++) {
+			if (array[j]>0 && array[j]<tmp)
+				tmp = array[j];
+		}
+		System.out.println(tmp);
+	}
+
+	//	How to rearrange array in alternating positive and negative number? (
+	public static void rearrangeArrayInAlternatingPositiveAndNegative(int[] array) {
+		for (int i = 0; i < array.length; i++) {
+			for (int j = i+1; j < array.length; j++)
+				if (i!=array.length) {
+					if (array[j]==array[i]*(-1)) {
+						int tmp = array[j];
+						array[j] = array[i+1];
+						array[i+1] =tmp ;
+						if(array[i]>array[i+1]) {
+							tmp = array[i+1];
+							array[i+1] = array[i];
+							array[i] = tmp;}
+					}
 				}
-				System.out.println(tmp);
+		}
+		SimpleArray.printArray(array);
+	}
+
+
+
+	// How to find if there is a sub array with sum equal to zero? 
+	public static boolean FindIfThereIsASubArrayWithSumEqualToZero(int[] array) {
+		boolean thereIsASubArray = false;
+		int sum =0;
+		for (int i = 0; i < array.length; i++){
+			sum =0;
+			for (int j = i+1; j < array.length; j++)
+				sum  = sum + array[j];
+			if (sum == 0 ) {
+				thereIsASubArray = true;
+				break; }
+		}
+		return thereIsASubArray; 
+	}
+
+	// How to merge sorted array?  
+	public static void mergeArray(int[] array1,int[] array2) {
+		int[] array3 = new int[array1.length+array2.length+1];
+		int k=0;
+		for (int i= 0 ; i < array1.length; i++,k++) {
+			array3[k] = array1[i]; }
+		k++;
+		for (int j = 0; j < array2.length; j++,k++) {
+			array3[k] = array2[j];}
+
+		for (int i = 0; i < array3.length-1; i++) {
+			for (int j=i+1; j<array3.length-1; j++) {
+				if (array3[i]>array3[j]) {
+					int tmp = array3[i];
+					array3[i] = array3[j];
+					array3[j] =tmp;
+				}
+
+			}}
+		SimpleArray.printArray(array3);	
+	}	
+
+
+
+	// How to find minimum value in a rotated sorted array?
+	public static int findMinimumValueInRotatedSortedArray(int[] array1) {
+		int low = 0;
+		int hight = array1.length - 1;
+		int mid;
+		while (array1[low] > array1[hight]) {
+			mid = (low + hight)/2;
+			if (array1[mid] > array1[hight]) {
+				low = mid + 1;
+			} else {
+				hight = mid;
 			}
-		
-	
-	
-			
-//			for (int j=i+1; j<array.length; j++) {
-//				if (array[j]>0) {
-//					if (array[j]<array[i]) {
-//						tmp = array[j];}
-//					}
-//				}
-		
+		}
+		return array1[low];
+	}
 
-
-	/*
-			9. Write a program to find intersection of two sorted arrays in Java?
-			10.There is an array with every element repeated twice except one. Find that element? 
-
-			13 How to find common elements in three sorted array? 
-
-
-
-	
-			
-	
-			
-			18. How to rearrange array in alternating positive and negative number? (
-			19. How to find if there is a sub array with sum equal to zero? 
-			20. How to remove duplicates from array in place? 
-			21. How to remove a given element from array in Java? (solution)
-			22. How to merge sorted array? 
-			23. How to find sub array with maximum sum in an array of positive and negative number? sub-array within an array (containing at least one number) which has the largest sum.
-			24. How to find sub array with largest product in array of both positive and negative number?
-			25. Write a program to find length of longest consecutive sequence in array of integers? 
-			26. How to find minimum value in a rotated sorted array? 
-			27. Given an array of of size n and a number k, find all elements that appear more than n/k times? (
-
-			29. Difference between array and linked list data structure? 
-			30. How to check if array contains a duplicate number? 
-					 */
-
-
-
-
-				}
+}

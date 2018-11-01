@@ -1,0 +1,71 @@
+Question 1 : Can you change size of array once created? [answer]
+No, you cannot change the size of array once created. If you need dynamic array, consider using ArrayList class, which can resize itself.
+
+
+Question 2 : Can you store String in an array of Integer in Java? compile time error or runtime exception? [answer]
+This is a tricky question. Answer is both yes and no. You cannot store an String in an array of primitive int, it will result in compile time error as shown below, but if you create an array of Object and assign String[] to it and then try to store Integer object on it. Compiler won't be able to detect that and it will throw ArrayStoreExcpetion at runtime.
+int[] primes = new int[10];
+primes[0] = "a";  //compile time error
+        
+Object[] names = new String[3];
+names[0] = new Integer(0); // ArrayStoreException at runtime
+
+
+Question 3 : What is difference between ArrayIndexOutfOBounds and ArrayStoreException? [answer]
+ArrayIndexOutOfBoundsException comes when your code tries to access an invalid index for a given array e.g. negative index or higher index than length - 1. While, ArrayStoreException comes when you have stored an element of type other than type of array, as shown in above example.
+
+
+Question 4 : Can you use Generics with array? [answer]
+No, you cannot use Generic with array, that's why sometime List is better choice over array in Java.
+
+
+Question 5 : Is it legal to initialize an array int i[] = {1, 2, 3, 4, 5}; [answer]
+Yes, its perfectly legal. You can create and initialize array in same line in Java.
+
+
+Question 6 : Difference between a[] and []a in Java? [answer]
+You can declare an array in Java by either prefixing or suffixing[] with variable. There is not much difference between them if you are not creating more than one variable in one line, but if you do then it creates different types of variables, as shown in following example :
+int a[], b; // first is int array, second is just int variable
+int[] c, d; // both c and d are integer array
+
+
+Question 7 : What is two dimensional array? [answer]
+An array of array in Java.  You can declare them like int[][] primes = new int[3][3] which is a matrix of 3x3.
+
+
+Question 8 : Do you have three dimensional array in Java? [answer]
+Yes, Java supports N dimensional array. Actually multi-dimensional array in Java is nothing but an array of array, for example, two dimensional array is just an array of one dimensional array.
+
+
+Question 9 : How to iterate over array in Java? [answer]
+You can either use classical for loop with index or advanced for loop introduced in Java 5 to iterate over an array in Java. If you need index to select some element or do something else, use for loop otherwise advanced for loop is better. It's less error prone as you don't need to deal with index.
+
+
+Question 10 : How to search an array to check if an element exists there? [answer]
+You can search an element inside array by using either linear search or binary search. Later is faster but you need to sort the array before performing binary search on it. Arrays class from java.util package provides binarySearch() method to search an element in array. Alternatively, you can also convert array to ArrayList and use its contains() method to find out if an element exists or not.
+
+
+Question 11 : How to sort an array in Java? [answer]
+You can sort an array in Java by using Arrays.sort() method. Arrays is a utility class which contains lots of static utility method to operate on arrays. This method is overloaded and you can optionally provide a Comparator implementation to sort array in custom order.
+
+
+Question 12 : How to copy array in Java? [answer]
+You can either manually copy elements of array by iterating over them, or you can use System.arrayCopy() method to copy elements form one array to other. This is a powerful method which provides fast copy and also allows you to copy entire or part of the array.
+
+
+Question 13 : How to access elements of array in Java? [answer]
+You can access elements of array using index in Java. It starts from 0, so first element is stored in location zero and last element has index length - 1. Trying to access an invalid index in Java e.g. negative index or index higher than size will result in ArrayIndexOutOfBoundsException in Java.
+
+
+Question 14 :  What is difference between an array and a linked list? [answer]
+Some key difference between array and linked list data structure is, Array requires contiguous memory for its element but linked list elements can be scattered in memory.  Array is good for searching elements if you know the index, but adding and removing elements in array is expensive as compared to linked list.
+
+
+Question 15 : Can you make array volatile in Java? [answer]
+This is another tricky question in Java. Yes, you can make an array volatile in Java, but you only make the variable which is pointing to array volatile. If array is changed by replacing individual elements than happens before guarantee provided by volatile variables will not held.
+
+
+Question 16 : Where does array stored in memory? [answer]
+Array is created in heap space of JVM memory. Since array is object in Java, even if you create array locally inside a method or block, object is always allocated memory from heap.
+
+Read more: http://www.java67.com/2015/07/array-concepts-interview-questions-answers-java.html#ixzz5UGuQuruN

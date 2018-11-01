@@ -2,27 +2,31 @@ package array.array;
 
 public class SimpleArray {
 
-	public int[] intArray = new int[10];
+	public int[] intArray1 = new int[5];
+	public String[] stringArray = new String[5];
+	public int[] intArray2 = new int[5];
 	public int[] intOngoingArray = new int[7];
 	
 	
 	public void setArray() {
-		intArray[0] =-5;
-		intArray[1] =-6;
-		intArray[2] =-7;
-		intArray[3] =8;
-		intArray[4] =9;
-		intArray[5] =10;
-		intArray[6] =0;
-		intArray[7] =-44;
-		intArray[8] =1;
-		intArray[9] =-215;
+		intArray1[0] =1;
+		intArray1[1] =3;
+		intArray1[2] =5;
+		intArray1[3] =7;
+		intArray1[4] =10;
 		
+		intArray2[0] =2;
+		intArray2[1] =4;
+		intArray2[2] =6;
+		intArray2[3] =9;
+		intArray2[4] =12;
+		
+		stringArray[0] ="dhj";
+		stringArray[1] ="sgf";
+		stringArray[2] ="er";
+		stringArray[3] ="3";
+		stringArray[4] ="er";
 
-		
-		
-		
-	
 	}
 	
 	
@@ -45,17 +49,25 @@ public class SimpleArray {
 		System.out.println(index);
 	}
 
-	public int[] getIntArray() {
-		return intArray;
+	public int[] getIntArray1() {
+		return intArray1;
 	}
 
 
 
-	public void setIntArray(int[] intArray) {
-		this.intArray = intArray;
+	public void setIntArray1(int[] intArray) {
+		this.intArray1= intArray;
 	}
 	
-	
+	public int[] getIntArray2() {
+		return intArray2;
+	}
+
+
+
+	public void setIntArray2(int[] intArray2) {
+		this.intArray2= intArray2;
+	}
 	
     public void overAllArray() {
     	setArray();

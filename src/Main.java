@@ -20,7 +20,7 @@ public class Main {
 //        	System.out.println(Recorsion.interivelFindHowManyZeroOnArray(simplearray.intArray));
 //          ArrayInterviewQuestions.findMissingNumber(simplearray.intOngoingArray);       	
 //          ArrayInterviewQuestions.findLargestAndSmallest(simplearray.intArray);
-            ArrayInterviewQuestions.findAllPairsEqualToSum(simplearray.intArray,1);
+            ArrayInterviewQuestions.findIfArrayContainsNumber(simplearray.stringArray);
       
         }
 	
