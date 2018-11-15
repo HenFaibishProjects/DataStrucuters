@@ -4,6 +4,7 @@ import array.array.MergeSort;
 import array.array.Recorsion;
 import array.array.SelectionSort;
 import array.array.SimpleArray;
+import lists.arrayList.Lists;
 
 public class Main {
 	
@@ -12,7 +13,7 @@ public class Main {
         
         
         public static void main(String args[]) {
-          simplearray.overAllArray();
+            simplearray.overAllArray();
 //          selectionSort.sortBySelection(simplearray.intArray);
 //          simplearray.printArray(simplearray.intArray);
 //          bubbleSort.sortByBubble(simplearray.intArray);
@@ -20,8 +21,11 @@ public class Main {
 //        	System.out.println(Recorsion.interivelFindHowManyZeroOnArray(simplearray.intArray));
 //          ArrayInterviewQuestions.findMissingNumber(simplearray.intOngoingArray);       	
 //          ArrayInterviewQuestions.findLargestAndSmallest(simplearray.intArray);
-            ArrayInterviewQuestions.findIfArrayContainsNumber(simplearray.stringArray);
+//            ArrayInterviewQuestions.findIfArrayContainsNumber(simplearray.stringArray);
       
+            Lists.createEployeeListWithData();
+            Lists.printEployeeList();
+            
         }
 	
 	
