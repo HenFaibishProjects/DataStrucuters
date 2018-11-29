@@ -6,12 +6,17 @@ public class EmployeeNode {
 
     private Employee employee;
     private EmployeeNode next;
+    
+    public EmployeeNode() {
+    }
 
     public EmployeeNode(Employee employee) {
         this.employee = employee;
     }
 
-    public Employee getEmployee() {
+   
+
+	public Employee getEmployee() {
         return employee;
     }
 
@@ -27,8 +32,12 @@ public class EmployeeNode {
         this.next = next;
     }
 
+    @Override
     public String toString() {
-        return employee.toString();
+    	return employee.toString();
+         //employee.getFirstName() + " " + employee.getLastName();
     }
+  
+    
 }
 

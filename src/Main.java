@@ -4,6 +4,7 @@ import array.array.MergeSort;
 import array.array.Recorsion;
 import array.array.SelectionSort;
 import array.array.SimpleArray;
+import linkedList.LinkedList;
 import lists.arrayList.Lists;
 
 public class Main {
@@ -22,9 +23,16 @@ public class Main {
 //          ArrayInterviewQuestions.findMissingNumber(simplearray.intOngoingArray);       	
 //          ArrayInterviewQuestions.findLargestAndSmallest(simplearray.intArray);
 //            ArrayInterviewQuestions.findIfArrayContainsNumber(simplearray.stringArray);
-      
-            Lists.createEployeeListWithData();
-            Lists.printEployeeList();
+//    
+//            Lists.createEployeeListWithData();
+//            Lists.printEployeeList();
+            
+            LinkedList.createEployeeLinkedList();
+//            LinkedList.addEployeeLinkedList();
+//            LinkedList.removeFirstItem();
+//            LinkedList.printSizeOfLinkedList();
+            LinkedList.printLinkedList();
+            
             
         }
 	
