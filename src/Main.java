@@ -4,6 +4,7 @@ import array.array.MergeSort;
 import array.array.Recorsion;
 import array.array.SelectionSort;
 import array.array.SimpleArray;
+import linkedList.JdkLinedList;
 import linkedList.LinkedList;
 import lists.arrayList.Lists;
 
@@ -31,7 +32,9 @@ public class Main {
 //            LinkedList.addEployeeLinkedList();
 //            LinkedList.removeFirstItem();
 //            LinkedList.printSizeOfLinkedList();
-            LinkedList.printLinkedList();
+//              LinkedList.printLinkedList();
+            JdkLinedList list = new JdkLinedList();
+            list.printTheList();
             
             
         }
