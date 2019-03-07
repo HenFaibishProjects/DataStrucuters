@@ -1,6 +1,19 @@
 package string;
 
+import java.lang.String;
+import java.util.Arrays;
+
 public class StringInterviewQuestions {
+    private Integer anInt;
+    private String a;
+    private StringBuffer ab;
+    private StringBuilder abc;
+
+// create String object
+    public static char[] createString(char[] chars) {
+        return Arrays.copyOf(chars, chars.length);
+    }
+
 	
 //				1) How to Print duplicate characters from String? (solution)
 //				2) How to check if two Strings are anagrams of each other? (solution)
@@ -28,12 +41,12 @@ public class StringInterviewQuestions {
 //				4) What is string constant pool?
 //				5) What is special about string objects as compared to objects of other derived types?
 //				6) What do you mean by mutable and immutable objects?
-//				7) Which is the final class in these three classes – String, StringBuffer and StringBuilder?
+//				7) Which is the final class in these three classes ï¿½ String, StringBuffer and StringBuilder?
 //				8) What is the difference between String, StringBuffer and StringBuilder?
 //				9) Why StringBuffer and StringBuilder classes are introduced in java when there already exist String class to represent the set of characters?
 //				10) How many objects will be created in the following code and where they will be stored in the memory?
 //				11) How do you create mutable string objects?
-//				12) Which one will you prefer among “==” and equals() method to compare two string objects?
+//				12) Which one will you prefer among ï¿½==ï¿½ and equals() method to compare two string objects?
 //				13) Which class will you recommend among String, StringBuffer and StringBuilder classes if I want mutable and thread safe objects?
 //				14) How do you convert given string to char array?
 //				15) How many objects will be created in the following code and where they will be stored?	
@@ -47,13 +60,66 @@ public class StringInterviewQuestions {
 //				24) What is the similarity and difference between String and StringBuffer class?
 //				25) What is the similarity and difference between StringBuffer and StringBuilder class?
 //				26) How do you count the number of occurrences of each character in a string?
-//				27) How do you remove all white spaces from a string in java?
+
+                 //How do you remove all white spaces from a string in java?
+                       public String removeWhiteSpacesFromString(String st) {
+                           return st.replaceAll(" ","");
+                       }
+
 //				28) How do you find duplicate characters in a string?
+                        public int duplicateCharactersInString(String s) {
+                            int distinct = 0;
+                            for (int i = 0; i < s.length(); i++) {
+                                for (int j = 0; j < s.length(); j++) {
+                                    if (s.charAt(i) == s.charAt(j)) {
+                                        distinct++;
+                                    }
+                                }
+                            }
+                            return distinct;
+                        }
+
+
+
 //				29)  Write a java program to reverse a string?
-//				30) Write a java program to check whether two strings are anagram or not?
+
+                        public String reverseString(String s) {
+                            StringBuilder result = new StringBuilder();
+                            for (int i = s.length(); i > 0; i--) {
+                                result.append(s.charAt(i - 1));
+                            }
+                            return String.valueOf(result);
+                        }
 //				31) Write a java program to reverse a given string with preserving the position of spaces?
-//				32) How do you convert string to integer and integer to string in java?
+
+                            public String reverseStringPreservingSpaces(String str){
+                                StringBuffer sb = new StringBuffer(str);
+                                sb.reverse();
+                                for(int i=0 ; i<str.length(); i++){
+                                    if(str.charAt(i)== ' '){
+                                        sb.insert(i, " ");
+                                    }
+                                }
+                                return String.valueOf(sb);
+                            }
+//				 How do you convert string to integer and integer to string in java?
+
+                         public void convert(int it ,String str){
+                              int convertedInt = Integer.valueOf(str);
+                              String ConvertedString = String.valueOf(it);
+                         }
 //				33) Write a code to prove that strings are immutable in java?
+                            public void proveStringsImmutable(){
+                                String a = "aa";
+                                int aHushBeforeChange = a.hashCode();
+                                a = "bb";
+                                int aHushAfterChange = a.hashCode();
+                                if (aHushBeforeChange!=aHushAfterChange)
+                                    System.out.print("strings are immutable in java");
+                                else
+                                    System.out.print("strings are mutable in java");
+                            }
 //				34) Write a code to check whether one string is a rotation of another?
 //				35) Write a java program to reverse each word of a given string?	
+
 }
