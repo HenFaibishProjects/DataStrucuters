@@ -67,5 +67,3 @@ This is another tricky question in Java. Yes, you can make an array volatile in 
 
 Question 16 : Where does array stored in memory? [answer]
 Array is created in heap space of JVM memory. Since array is object in Java, even if you create array locally inside a method or block, object is always allocated memory from heap.
-
-Read more: http://www.java67.com/2015/07/array-concepts-interview-questions-answers-java.html#ixzz5UGuQuruN
