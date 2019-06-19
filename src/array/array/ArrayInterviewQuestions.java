@@ -1,11 +1,6 @@
 package array.array;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ArrayInterviewQuestions  {
 
@@ -21,8 +16,6 @@ public class ArrayInterviewQuestions  {
 		return null;
 	}
 
-
-
 	//  How to find duplicate number on Integer array in Java?
 	public static Integer findDuplicateNumber(int[] array) {
 		for (int i = 0; i < array.length; i++) {
@@ -34,9 +27,7 @@ public class ArrayInterviewQuestions  {
 		return null;
 	}
 
-
-
-	// How to check if array contains a number in Java? 
+	//How to check if array contains a number in Java?
 	public static boolean findIfArrayContainsNumber(String[] array) {
 		boolean containNumbers = false;
 		for (int i = 0; i < array.length; i++) {
@@ -52,7 +43,7 @@ public class ArrayInterviewQuestions  {
 		return containNumbers;
 	}
 
-	//4. How to find largest and smallest number in unsorted array?
+	//How to find largest and smallest number in unsorted array?
 	public static void findLargestAndSmallest(int[] array) {
 		int smallest = 0;
 		int largest = 0;
@@ -69,7 +60,7 @@ public class ArrayInterviewQuestions  {
 		System.out.println("largest is: " + largest +  "  Smallest is: " + smallest);
 	}
 
-	//5. How to find all pairs on integer array whose sum is equal to given number? 
+	//How to find all pairs on integer array whose sum is equal to given number?
 	public static void findAllPairsEqualToSum(int[] array,int sum) {
 		for (int i = 0; i < array.length; i++) {
 			for (int j=i+1; j<array.length; j++) {
@@ -79,14 +70,7 @@ public class ArrayInterviewQuestions  {
 		}
 	}
 
-
-
-
-
-
-
-	//	Write a program to remove duplicates from array in Java? 
-
+	//Write a program to remove duplicates from array in Java?
 	public static void removeDuplicateNumber(int[] array) {
 		for (int i = 0; i < array.length; i++) {
 			for (int j=i+1; j<array.length; j++) {
@@ -100,8 +84,7 @@ public class ArrayInterviewQuestions  {
 		SimpleArray.printArray(array);
 	}
 
-
-	// There is an array with every element repeated twice except one. Find that element? 
+	//There is an array with every element repeated twice except one. Find that element?
 	public static void everyElementRepeatedTwiceExceptOne(int[] array) {
 		List<Integer> tmpList = new ArrayList<Integer>();
 		for (int i = 0; i < array.length; i++) {
@@ -120,8 +103,7 @@ public class ArrayInterviewQuestions  {
 		}
 	}
 
-
-	//  How to find smallest element in unsorted array? 		 
+	//How to find smallest element in unsorted array?
 	public static int findSmallestElementInUnsorted(int[] array) {
 		int smalles = array[0];
 		for (int i = 1; i < array.length; i++) {
@@ -131,9 +113,7 @@ public class ArrayInterviewQuestions  {
 		return smalles;
 	}
 
-
-	// How to find most common element in array? - NOT WORKING WELL !!!!!
-
+	//How to find most common element in array? - NOT WORKING WELL !!!!!
 	public static void findMostCommonElement(int[] array) {
 		Map<Integer, Integer> myMap = new HashMap<Integer, Integer>();
 		for(int i : array) {
@@ -155,8 +135,7 @@ public class ArrayInterviewQuestions  {
 		System.out.println("Largest Key       : " + largestKey);
 	}
 
-
-	// How find the first repeating element in an array of integers? 
+	//How find the first repeating element in an array of integers?
 	public static int findTheFirstRepeatingElement(int[] array) {
 		int tmp = 0;
 		for (int i = 0; i < array.length; i++) {
@@ -170,8 +149,7 @@ public class ArrayInterviewQuestions  {
 		return tmp;
 	}
 
-
-	// How to reverse array in place in Java? 
+	//How to reverse array in place in Java?
 	public static void reverseArray(int[] array) {
 		int tmpa ;
 		for (int i = 0; i < array.length/2; i++) {
@@ -182,7 +160,7 @@ public class ArrayInterviewQuestions  {
 		System.out.println(array[1]);
 	}
 
-	//	How to find first non-repeating element in array of integers?
+	//How to find first non-repeating element in array of integers?
 	public static int findTheFirstNoneRepeatingElement(int[] array) {
 		boolean flagForRepeatingElements = false;
 		Integer tmp = null ;
@@ -201,8 +179,6 @@ public class ArrayInterviewQuestions  {
 		return tmp;
 
 	}
-
-
 
 	//How to find top two numbers from an integer array
 	public static void findTopTwoNumbers(int[] array) {
@@ -227,8 +203,7 @@ public class ArrayInterviewQuestions  {
 		System.out.println(SecondTopMaxNumber);
 	}
 
-
-	//	How to find the smallest positive integer value
+	//How to find the smallest positive integer value
 	public static void findTheSmallestPsitiveInt(int[] array) {
 		Integer tmp = null;
 		for (int i = 1; i < array.length; i++) {
@@ -261,8 +236,6 @@ public class ArrayInterviewQuestions  {
 		}
 		SimpleArray.printArray(array);
 	}
-
-
 
 	// How to find if there is a sub array with sum equal to zero? 
 	public static boolean FindIfThereIsASubArrayWithSumEqualToZero(int[] array) {
@@ -301,8 +274,6 @@ public class ArrayInterviewQuestions  {
 		SimpleArray.printArray(array3);	
 	}	
 
-
-
 	// How to find minimum value in a rotated sorted array?
 	public static int findMinimumValueInRotatedSortedArray(int[] array1) {
 		int low = 0;
@@ -317,6 +288,62 @@ public class ArrayInterviewQuestions  {
 			}
 		}
 		return array1[low];
+	}
+
+	// ccolors balls 1.Yello 2.Red 3.Blue
+	public static void colorBalls(String[] array) {
+		for (int i = 0; i < array.length; i++) {
+			for (int j = i + 1; j < array.length; j++) {
+				if (array[j].equals("b")) {
+					SimpleArray.swap(array, i, j);
+				}
+				if (array[j].equals("r")) {
+					SimpleArray.swap(array, i, j);
+				}
+				if (array[j].equals("y")) {
+					SimpleArray.swap(array, i, j);
+				}
+			}
+		}
+	}
+
+	// How to sortby modle 2,4,6,8.
+	public static void sortByModle(int[] array) {
+		for (int i =0 ; i<array.length ; i++) {
+			for (int j = i+1 ; j<array.length ; j++)
+			{
+				if (!(array[j] % 3 == 1)) {
+					SimpleArray.swap(array,i,j);
+				}
+
+				if (!(array[j] % 2 == 1)) {
+                    SimpleArray.swap(array,i,j);
+				}
+
+			}
+		}
+
+	}
+
+    // return random song from array , do not repeat songs in same week
+	public static void returnRandEchTimeAnother(int[] array) {
+		int daysOfTheWeekTmp = 0;
+		Map<Integer, Boolean> weeklySonglist = new HashMap<>();
+		for (int i = 0; i < array.length; i++) {
+			weeklySonglist.put(array[i], false);
+		}
+		while (daysOfTheWeekTmp<7) {
+			int arrayLength = array.length;
+			Random r = new Random();
+			int tmp = r.nextInt((arrayLength));
+			if (!(weeklySonglist.get(array[tmp]))) {
+				System.out.print(array[tmp] + " ");
+				daysOfTheWeekTmp++;
+				weeklySonglist.put(array[tmp],true);
+			}
+
+		}
+
 	}
 
 }

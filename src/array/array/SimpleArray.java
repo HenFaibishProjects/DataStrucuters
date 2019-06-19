@@ -75,7 +75,11 @@ public class SimpleArray {
     	//printArray(intArray);
     	
     }
-
+	public static void swap(String[] array, int i, int j) {
+		String tmp = array[i];
+		array[i] = array[j];
+		array[j] =tmp;
+	}
 
 	public static void swap(int[] array, int i, int j) {
 		int tmp = array[i];
